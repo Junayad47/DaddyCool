@@ -101,6 +101,15 @@ textarea:focus, input:focus {
   margin-bottom: 15px;
 }
 
+#quoteBox {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #c74c8d;
+  text-align: center;
+}
+
+
 .quote {
   font-style: italic;
   font-size: 0.95rem;
