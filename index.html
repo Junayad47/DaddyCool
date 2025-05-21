@@ -11,32 +11,31 @@
     <h1>🔐 Jay & Tiana's Secret Encoder 💌</h1>
     
     <div id="unlockSection">
-      <p class="subtitle">Enter your passkey to start gooning:</p>
+      <p class="subtitle">Enter your passkey to unlock the love encoder:</p>
       <input type="password" id="passKey" placeholder="Enter passkey..." />
-      <button class="cute-button" onclick="unlock()">Unlock 💖</button>
+      <button onclick="unlock()">Unlock 💖</button>
     </div>
 
     <div id="appContent" class="hidden">
       <p id="quoteBox" class="quote"></p>
 
-      <textarea id="inputText" placeholder="Yap here..."></textarea>
+      <textarea id="inputText" placeholder="Type your message here..."></textarea>
       <div class="button-row">
+        <button class="cute-button" onclick="encode()">Encode 🔐</button>
+        <button class="cute-button" onclick="decode()">Decode 🔓</button>
         <button class="cute-button" onclick="clearInput()">Clear Input ❌</button>
         <button class="cute-button" onclick="pasteFromClipboard()">Paste 📥</button>
       </div>
 
-      <div class="buttons">
-        <button class="cute-button" onclick="encode()">Encode 🔐</button>
-        <button class="cute-button" onclick="decode()">Decode 🔓</button>
+      <textarea id="outputText" readonly placeholder="Your encrypted or decoded message will appear here..."></textarea>
+      <div class="button-row">
+        <button class="cute-button" onclick="clearOutput()">Clear Output ❌</button>
         <button class="cute-button" onclick="copyToClipboard()">Copy 📋</button>
       </div>
-
-      <textarea id="outputText" readonly placeholder="Your encrypted yap will appear here..."></textarea>
-      <button class="cute-button" onclick="clearOutput()">Clear Output ❌</button>
     </div>
-
-    <img src="couple.jpg" alt="Jay and Tiana" class="cute-photo"/>
   </div>
+
+  <img src="couple.jpg" alt="Jay and Tiana" class="corner-photo" />
 
   <script src="script.js"></script>
 </body>
