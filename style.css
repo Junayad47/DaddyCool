@@ -55,6 +55,15 @@ h1 {
 }
 
 .subtitle {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  color: #b24382;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.subtitle {
   font-size: 1rem;
   color: #444;
   margin-bottom: 10px;
