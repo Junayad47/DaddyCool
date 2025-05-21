@@ -60,3 +60,11 @@ function unlock() {
 }
 
 window.onload = () => displayQuote();
+
+function clearInput() {
+  document.getElementById("inputText").value = "";
+}
+
+function clearOutput() {
+  document.getElementById("outputText").value = "";
+}
