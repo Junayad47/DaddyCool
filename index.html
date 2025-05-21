@@ -1,29 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Key2MyHeart - Jay & Tiana</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Jay & Tiana's Secret Encoder</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="heart-animation"></div>
   <div class="container">
-    <div class="avatars">
-      <img src="avatars/jay.png" class="avatar" alt="Jay">
-      <img src="avatars/tiana.png" class="avatar" alt="Tiana">
+    <div id="unlockSection" class="unlock">
+      <h2>💌 Welcome Jay & Tiana 💌</h2>
+      <p>Enter your special passkey to unlock your secret tools.</p>
+      <input type="password" id="passKey" placeholder="Enter passkey (hint: your name)" />
+      <button onclick="unlock()">Unlock 🔐</button>
     </div>
-    <div id="quoteBox" class="quote"></div>
-    <textarea id="inputText" placeholder="Write your love message here..."></textarea>
-    <input type="file" id="photoUpload" accept="image/*" />
-    <canvas id="photoCanvas" width="200" height="200"></canvas>
-    <div class="buttons">
-      <button onclick="encode()">Encode</button>
-      <button onclick="decode()">Decode</button>
+
+    <div id="appContent" class="hidden">
+      <h1>🔐 Love Encoder & Decoder</h1>
+      <div id="quoteBox" class="quote"></div>
+
+      <textarea id="inputText" placeholder="Type something you want to encode or decode..."></textarea>
+
+      <div class="buttons">
+        <button onclick="encode()">✨ Encode</button>
+        <button onclick="decode()">🔓 Decode</button>
+        <button onclick="copyToClipboard()">📋 Copy</button>
+      </div>
+
+      <textarea id="outputText" readonly placeholder="Your result will appear here..."></textarea>
     </div>
-    <textarea id="outputText" readonly placeholder="Your secret message will appear here..."></textarea>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
