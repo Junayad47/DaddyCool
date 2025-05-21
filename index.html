@@ -13,24 +13,29 @@
     <div id="unlockSection">
       <p class="subtitle">Enter your passkey to start gooning:</p>
       <input type="password" id="passKey" placeholder="Enter passkey..." />
-      <button onclick="unlock()">Unlock 💖</button>
+      <button class="cute-button" onclick="unlock()">Unlock 💖</button>
     </div>
 
     <div id="appContent" class="hidden">
       <p id="quoteBox" class="quote"></p>
 
       <textarea id="inputText" placeholder="Yap here..."></textarea>
-      <button onclick="clearInput()">Clear Input ❌</button>
+      <div class="button-row">
+        <button class="cute-button" onclick="clearInput()">Clear Input ❌</button>
+        <button class="cute-button" onclick="pasteFromClipboard()">Paste 📥</button>
+      </div>
 
       <div class="buttons">
-        <button onclick="encode()">Encode 🔐</button>
-        <button onclick="decode()">Decode 🔓</button>
-        <button onclick="copyToClipboard()">Copy 📋</button>
+        <button class="cute-button" onclick="encode()">Encode 🔐</button>
+        <button class="cute-button" onclick="decode()">Decode 🔓</button>
+        <button class="cute-button" onclick="copyToClipboard()">Copy 📋</button>
       </div>
 
       <textarea id="outputText" readonly placeholder="Your encrypted yap will appear here..."></textarea>
-      <button onclick="clearOutput()">Clear Output ❌</button>
+      <button class="cute-button" onclick="clearOutput()">Clear Output ❌</button>
     </div>
+
+    <img src="couple.jpg" alt="Jay and Tiana" class="cute-photo"/>
   </div>
 
   <script src="script.js"></script>
