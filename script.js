@@ -68,3 +68,19 @@ function clearInput() {
 function clearOutput() {
   document.getElementById("outputText").value = "";
 }
+
+function clearInput() {
+  document.getElementById("inputText").value = "";
+}
+
+function clearOutput() {
+  document.getElementById("outputText").value = "";
+}
+
+function pasteFromClipboard() {
+  navigator.clipboard.readText().then((text) => {
+    document.getElementById("inputText").value = text;
+  }).catch((err) => {
+    alert("Failed to read clipboard. Please allow permissions.");
+  });
+}
