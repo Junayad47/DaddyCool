@@ -9,17 +9,24 @@
 <body>
   <div class="container">
     <h1>🔐 Jay & Tiana's Secret Encoder 💌</h1>
-    
+
+    <!-- Cute circular photo -->
+    <div class="photo-wrapper">
+      <img src="couple.jpg" alt="Jay and Tiana" class="round-photo" />
+    </div>
+
+    <!-- Unlock Section -->
     <div id="unlockSection">
-      <p class="subtitle">Enter your passkey to unlock the love encoder:</p>
+      <p class="subtitle">Say the magic word to start gooning:</p>
       <input type="password" id="passKey" placeholder="Enter passkey..." />
       <button onclick="unlock()">Unlock 💖</button>
     </div>
 
+    <!-- Main Content -->
     <div id="appContent" class="hidden">
       <p id="quoteBox" class="quote"></p>
 
-      <textarea id="inputText" placeholder="Type your message here..."></textarea>
+      <textarea id="inputText" placeholder="Yap here..."></textarea>
       <div class="button-row">
         <button class="cute-button" onclick="encode()">Encode 🔐</button>
         <button class="cute-button" onclick="decode()">Decode 🔓</button>
@@ -27,15 +34,13 @@
         <button class="cute-button" onclick="pasteFromClipboard()">Paste 📥</button>
       </div>
 
-      <textarea id="outputText" readonly placeholder="Your encrypted or decoded message will appear here..."></textarea>
+      <textarea id="outputText" readonly placeholder="Your encrypted or decoded yap will appear here..."></textarea>
       <div class="button-row">
         <button class="cute-button" onclick="clearOutput()">Clear Output ❌</button>
         <button class="cute-button" onclick="copyToClipboard()">Copy 📋</button>
       </div>
     </div>
   </div>
-
-  <img src="couple.jpg" alt="Jay and Tiana" class="corner-photo" />
 
   <script src="script.js"></script>
 </body>
