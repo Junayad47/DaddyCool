@@ -1,5 +1,11 @@
+const keyMap = {
+  'q':'a','w':'b','e':'c','r':'d','t':'e','y':'f','u':'g','i':'h','o':'i','p':'j',
+  'a':'k','s':'l','d':'m','f':'n','g':'o','h':'p','j':'q','k':'r','l':'s',';':'t',
+  'z':'u','x':'v','c':'w','v':'x','b':'y','n':'z','m':' ', ' ':'m',
+  '1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9','0':'0',
+  '-':'-','=':'='
+};
 
-const keyMap = {'1':'a','2':'b','3':'c','4':'d','5':'e','6':'f','7':'g','8':'h','9':'i','0':'j','-':'k','=':'l','q':'m','w':'n','e':'o','r':'p','t':'q','y':'r','u':'s','i':'t','o':'u','p':'v','a':'w','s':'x','d':'y','f':'z','g':' '};
 const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
 
 function encode() {
@@ -20,6 +26,7 @@ function decode() {
   document.getElementById("outputText").value = result;
 }
 
+// The rest of your code (loveQuotes, displayQuote, photoUpload) remains the same
 const loveQuotes = [
   "You are my today and all of my tomorrows. — Leo Christopher",
   "I love you not only for what you are, but for what I am when I am with you. — Roy Croft",
