@@ -35,11 +35,11 @@ function copyToClipboard() {
 }
 
 const loveQuotes = [
-  "You are my today and all of my tomorrows. — Leo Christopher",
-  "I love you not only for what you are, but for what I am when I am with you. — Roy Croft",
-  "In all the world, there is no heart for me like yours. — Maya Angelou",
-  "You’re nothing short of my everything. — Ralph Block",
-  "You had me at hello. — Jerry Maguire"
+  "I like watching you. — Tiana",
+  "I like watching you, playing pool, I mean. — Tiana",
+  "Absolute Vodka",
+  "Bc Kush",
+  "You had me at the pool table. — Jay"
 ];
 
 function displayQuote() {
