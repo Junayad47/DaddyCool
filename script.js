@@ -37,8 +37,8 @@ function copyToClipboard() {
 const loveQuotes = [
   "I like watching you. — Tiana",
   "I like watching you, playing pool, I mean. — Tiana",
-  "Absolute Vodka",
-  "Bc Kush",
+  "Absolute Vodka !",
+  "Bc Kush !",
   "You had me at the pool table. — Jay"
 ];
 
@@ -55,7 +55,7 @@ function unlock() {
     content.classList.remove("hidden");
     document.getElementById("unlockSection").classList.add("hidden");
   } else {
-    alert("Incorrect passkey. Please try again.");
+    alert("Incorrect passkey, Seriously ?");
   }
 }
 
