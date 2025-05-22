@@ -134,7 +134,9 @@ textarea:focus, input:focus {
   background: pink;
   transform: rotate(45deg);
   animation: float 5s linear infinite;
+  z-index: 1;
 }
+
 
 .heart::before,
 .heart::after {
