@@ -12,10 +12,12 @@ const reverseKeyMap = Object.fromEntries(
 );
 
 function encode() {
-  const text = document.getElementById("inputText").value.toLowerCase();
+  const text = document.getElementById("inputText").value;
   let result = '';
   for (let char of text) {
-    result += keyMap[char] ?? char;
+    const lower = char.toLowerCase();
+    const encoded = keyMap[lower] ?? char;
+    result += encoded;
   }
   document.getElementById("outputText").value = result;
 }
@@ -24,7 +26,8 @@ function decode() {
   const text = document.getElementById("inputText").value;
   let result = '';
   for (let char of text) {
-    result += reverseKeyMap[char] ?? char;
+    const decoded = reverseKeyMap[char] ?? char;
+    result += decoded;
   }
   document.getElementById("outputText").value = result;
 }
@@ -82,11 +85,12 @@ function unlock() {
   }
 }
 
-// Floating Hearts
+// Updated heart function to spawn all over screen
 function createHeart() {
   const heart = document.createElement('div');
   heart.className = 'heart';
   heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.top = Math.random() * 100 + 'vh';  // Instead of always top=0
   heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
   document.querySelector('.heart-container').appendChild(heart);
   setTimeout(() => heart.remove(), 5000);
