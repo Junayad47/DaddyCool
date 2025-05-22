@@ -2,37 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Secret Encoder</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay ❤ Tiana's Secret Encoder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1 class="headline">Secret Encoder</h1>
+  <div class="heart-container"></div>
 
+  <div class="container">
+    <h1 class="decorated-title">
+      <span class="pink">Jay</span> & <span class="pink">Tiana</span>'s <span class="gold">Secret Encoder</span>
+    </h1>
+
+    <!-- Cute circular photo -->
+    <div class="photo-wrapper">
+      <img src="couple.jpg" alt="Jay and Tiana" class="round-photo" />
+    </div>
+
+    <!-- Unlock Section -->
     <div id="unlockSection">
       <p class="subtitle">Type the magic words to start gooning !</p>
-      <p id="quoteBox" class="quote hidden"></p>
       <input type="password" id="passKey" placeholder="Enter passkey..." />
       <button class="cute-button" onclick="unlock()">Unlock 💖</button>
     </div>
 
+    <!-- Main Content -->
     <div id="appContent" class="hidden">
-      <textarea id="inputText" rows="5" placeholder="Type or paste your text here..."></textarea>
+      <p id="quoteBox" class="quote hidden"></p>
 
+      <textarea id="inputText" placeholder="Yap here..."></textarea>
       <div class="button-row">
-        <button class="cute-button" onclick="encode()">Encode</button>
-        <button class="cute-button" onclick="decode()">Decode</button>
-        <button class="cute-button" onclick="clearInput()">Clear Input</button>
-        <button class="cute-button" onclick="clearOutput()">Clear Output</button>
-        <button class="cute-button" onclick="pasteFromClipboard()">Paste</button>
-        <button class="cute-button" onclick="copyToClipboard()">Copy</button>
+        <button class="cute-button" onclick="encode()">Encode 🔐</button>
+        <button class="cute-button" onclick="decode()">Decode 🔓</button>
+        <button class="cute-button" onclick="clearInput()">Clear Input ❌</button>
+        <button class="cute-button" onclick="pasteFromClipboard()">Paste 📥</button>
       </div>
 
-      <textarea id="outputText" rows="5" placeholder="Your result will appear here..." readonly></textarea>
+      <textarea id="outputText" readonly placeholder="Your encrypted or decoded yap will appear here..."></textarea>
+      <div class="button-row">
+        <button class="cute-button" onclick="clearOutput()">Clear Output ❌</button>
+        <button class="cute-button" onclick="copyToClipboard()">Copy 📋</button>
+      </div>
     </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
