@@ -19,32 +19,29 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
+  transition: opacity 0.4s ease;
 }
 
 .headline {
   font-family: 'Dancing Script', cursive;
-  font-size: 2.9rem;
+  font-size: 3.4rem;
   color: #d63384;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  background: linear-gradient(45deg, #d63384, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.photo-wrapper {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.round-photo {
+.headline::after {
+  content: "";
   width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid pink;
-  box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
-  transition: transform 0.3s ease;
-}
-
-.round-photo:hover {
-  transform: scale(1.05);
+  height: 4px;
+  background: #ff69b4;
+  display: block;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #ff85c1aa;
 }
 
 .subtitle {
@@ -64,12 +61,14 @@ textarea, input[type="password"] {
   font-size: 1rem;
   resize: none;
   box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
 }
 
 textarea:focus, input:focus {
   outline: none;
   border-color: #ff69b4;
   background-color: #fff8fb;
+  box-shadow: 0 0 10px 2px #ff69b4aa;
 }
 
 .cute-button {
@@ -82,11 +81,16 @@ textarea:focus, input:focus {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s;
+  user-select: none;
 }
 
 .cute-button:hover {
   background-color: #ff85c1;
   transform: scale(1.05);
+}
+
+.cute-button:active {
+  transform: scale(0.95);
 }
 
 .button-row {
@@ -102,15 +106,36 @@ textarea:focus, input:focus {
   margin: 20px 0;
   color: #c74c8d;
   text-align: center;
+  transition: opacity 0.4s ease;
+  opacity: 1;
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  display: block !important; /* Keep space for transition */
+}
+
+#appContent {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+}
+
+#appContent.visible {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
 }
 
 @media screen and (max-width: 480px) {
   .container {
     padding: 20px 15px;
+    min-height: 70vh;
   }
 
   .cute-button {
