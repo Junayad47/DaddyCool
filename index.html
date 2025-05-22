@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <title>Jay ❤ Tiana's Secret Encoder</title>
-   <link rel="stylesheet" href="style.css" />
-   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay ❤ Tiana's Secret Encoder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>
-      <span class="heart-left">💖</span>
-      <span class="headline-text">Jay & Tiana's</span>
-      <br />
-      <span class="headline-sub">Secret Encoder</span>
-      <span class="heart-right">💌</span>
-    </h1>
+    <h1 class="headline">🔐 Jay & Tiana's Secret Encoder 💌</h1>
 
     <!-- Cute circular photo -->
     <div class="photo-wrapper">
@@ -24,15 +18,14 @@
 
     <!-- Unlock Section -->
     <div id="unlockSection">
-      <p class="subtitle">Type the magic words to start gooning!</p>
+      <p class="subtitle">Type the magic words to start gooning !</p>
+      <p id="quoteBox" class="quote"></p>
       <input type="password" id="passKey" placeholder="Enter passkey..." />
       <button class="cute-button" onclick="unlock()">Unlock 💖</button>
     </div>
 
     <!-- Main Content -->
     <div id="appContent" class="hidden">
-      <p id="quoteBox" class="quote"></p>
-
       <textarea id="inputText" placeholder="Yap here..."></textarea>
       <div class="button-row">
         <button class="cute-button" onclick="encode()">Encode 🔐</button>
@@ -50,5 +43,20 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- Floating hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💗";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
 </body>
 </html>
