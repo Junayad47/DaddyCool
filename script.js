@@ -7,9 +7,7 @@ const keyMap = {
   'z': '[', ' ': ']'
 };
 
-const reverseKeyMap = Object.fromEntries(
-  Object.entries(keyMap).map(([k, v]) => [v, k])
-);
+const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
 
 function encode() {
   const text = document.getElementById("inputText").value.toLowerCase();
@@ -34,26 +32,9 @@ function copyToClipboard() {
   output.select();
   output.setSelectionRange(0, 99999);
   document.execCommand("copy");
-  alert("Copied to clipboard! 📋");
+  alert("Copied to clipboard.");
 }
 
-function pasteFromClipboard() {
-  navigator.clipboard.readText().then((text) => {
-    document.getElementById("inputText").value = text;
-  }).catch((err) => {
-    alert("Failed to read clipboard. Please allow permissions.");
-  });
-}
-
-function clearInput() {
-  document.getElementById("inputText").value = "";
-}
-
-function clearOutput() {
-  document.getElementById("outputText").value = "";
-}
-
-// Quotes
 const loveQuotes = [
   "I like watching you. — Tiana",
   "I like watching you, playing pool, I mean. — Tiana",
@@ -68,21 +49,34 @@ function showRandomQuote() {
   quoteBox.textContent = loveQuotes[randomIndex];
 }
 
-// Show one immediately on load
-window.onload = () => {
-  showRandomQuote();
-  setInterval(showRandomQuote, 60000); // update every 60 seconds
-};
-
-// Unlock the encoder
 function unlock() {
   const key = document.getElementById("passKey").value.toLowerCase();
   const content = document.getElementById("appContent");
-  const unlockSection = document.getElementById("unlockSection");
   if (key === "tiana" || key === "jay") {
     content.classList.remove("hidden");
-    unlockSection.classList.add("hidden");
+    document.getElementById("unlockSection").classList.add("hidden");
   } else {
     alert("Incorrect passkey, Seriously ?");
   }
+}
+
+window.onload = () => {
+  showRandomQuote();
+  setInterval(showRandomQuote, 60000);
+};
+
+function clearInput() {
+  document.getElementById("inputText").value = "";
+}
+
+function clearOutput() {
+  document.getElementById("outputText").value = "";
+}
+
+function pasteFromClipboard() {
+  navigator.clipboard.readText().then((text) => {
+    document.getElementById("inputText").value = text;
+  }).catch((err) => {
+    alert("Failed to read clipboard. Please allow permissions.");
+  });
 }
