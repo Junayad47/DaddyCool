@@ -1,15 +1,5 @@
-/* style.css */
 body {
   font-family: 'Quicksand', sans-serif;
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.9rem;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #ffe0ec, #e0f7ff);
   margin: 0;
   padding: 0;
@@ -31,8 +21,26 @@ body {
 }
 
 h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.2rem;
   color: #d63384;
   margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.headline-text {
+  font-size: 3.5rem;
+  color: #ff5ca2;
+}
+
+.headline-sub {
+  font-size: 2.3rem;
+  color: #b24382;
+}
+
+.heart-left,
+.heart-right {
+  font-size: 2.2rem;
 }
 
 .photo-wrapper {
@@ -56,17 +64,10 @@ h1 {
 
 .subtitle {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #b24382;
   margin-bottom: 10px;
   text-align: center;
-}
-
-
-.subtitle {
-  font-size: 2.0rem;
-  color: #444;
-  margin-bottom: 10px;
 }
 
 textarea, input[type="password"] {
@@ -116,14 +117,6 @@ textarea:focus, input:focus {
   margin: 20px 0;
   color: #c74c8d;
   text-align: center;
-}
-
-
-.quote {
-  font-style: italic;
-  font-size: 2.0rem;
-  color: #6c757d;
-  margin-bottom: 15px;
 }
 
 .hidden {
