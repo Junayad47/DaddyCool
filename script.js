@@ -115,20 +115,17 @@ function unlock() {
   }
 }
 
-// Floating hearts animation
-function startHearts() {
-  const container = document.body;
-
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "floating-heart";
-    heart.innerText = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    container.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 5000);
-  }, 800);
+// ❤️ Floating hearts everywhere
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.top = Math.random() * 100 + 'vh';
+  heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+  document.querySelector('.heart-container').appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
 }
+setInterval(createHeart, 500);
 
 // On page load, hide quote initially
 window.onload = () => {
