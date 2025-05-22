@@ -92,4 +92,15 @@ function clearInput() {
   document.getElementById("inputText").value = "";
 }
 
-function clearOutput()
+function clearOutput() {
+  document.getElementById("outputText").value = "";
+}
+
+async function pasteFromClipboard() {
+  try {
+    const text = await navigator.clipboard.readText();
+    document.getElementById("inputText").value += text;
+  } catch {
+    alert("Unable to access clipboard.");
+  }
+}
