@@ -42,6 +42,15 @@ const loveQuotes = [
   "You had me at the pool table. — Jay"
 ];
 
+function showRandomQuote() {
+  const quoteBox = document.getElementById("quoteBox");
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteBox.textContent = loveQuotes[randomIndex];
+}
+
+// Show one initially and then rotate every 60 seconds
+setInterval(showRandomQuote, 60000); // every 60 sec
+
 function displayQuote() {
   const quoteBox = document.getElementById("quoteBox");
   const quote = loveQuotes[Math.floor(Math.random() * loveQuotes.length)];
