@@ -27,12 +27,17 @@ function decode() {
   document.getElementById("outputText").value = result;
 }
 
-function copyToClipboard() {
-  const output = document.getElementById("outputText");
-  output.select();
-  output.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  alert("Copied to clipboard.");
+async function copyToClipboard() {
+  const output = document.getElementById("outputText").value;
+  try {
+    await navigator.clipboard.writeText(output);
+    alert("Copied to clipboard.");
+  } catch {
+    const outputElem = document.getElementById("outputText");
+    outputElem.select();
+    document.execCommand("copy");
+    alert("Copied to clipboard (fallback).");
+  }
 }
 
 const loveQuotes = [
@@ -51,12 +56,30 @@ function showRandomQuote() {
 
 function unlock() {
   const key = document.getElementById("passKey").value.toLowerCase();
-  const content = document.getElementById("appContent");
+  const appContent = document.getElementById("appContent");
+  const unlockSection = document.getElementById("unlockSection");
+  const quoteBox = document.getElementById("quoteBox");
+
   if (key === "tiana" || key === "jay") {
-    content.classList.remove("hidden");
-    document.getElementById("unlockSection").classList.add("hidden");
+    // fade out unlock section & quote
+    unlockSection.style.opacity = '0';
+    quoteBox.style.opacity = '0';
+
+    setTimeout(() => {
+      unlockSection.classList.add("hidden");
+      quoteBox.classList.add("hidden");
+
+      // Show app content with fade-in
+      appContent.classList.remove("hidden");
+      setTimeout(() => {
+        appContent.classList.add("visible");
+        document.getElementById("inputText").focus();
+      }, 50);
+    }, 400);
+
+    document.getElementById("passKey").value = "";
   } else {
-    alert("Incorrect passkey, Seriously ?");
+    alert("Incorrect passkey, Seriously?");
   }
 }
 
@@ -69,14 +92,4 @@ function clearInput() {
   document.getElementById("inputText").value = "";
 }
 
-function clearOutput() {
-  document.getElementById("outputText").value = "";
-}
-
-function pasteFromClipboard() {
-  navigator.clipboard.readText().then((text) => {
-    document.getElementById("inputText").value = text;
-  }).catch((err) => {
-    alert("Failed to read clipboard. Please allow permissions.");
-  });
-}
+function clearOutput()
