@@ -7,7 +7,9 @@ const keyMap = {
   'z': '[', ' ': ']'
 };
 
-const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
+const reverseKeyMap = Object.fromEntries(
+  Object.entries(keyMap).map(([k, v]) => [v, k])
+);
 
 function encode() {
   const text = document.getElementById("inputText").value.toLowerCase();
@@ -27,66 +29,21 @@ function decode() {
   document.getElementById("outputText").value = result;
 }
 
-async function copyToClipboard() {
-  const output = document.getElementById("outputText").value;
-  try {
-    await navigator.clipboard.writeText(output);
-    alert("Copied to clipboard.");
-  } catch {
-    const outputElem = document.getElementById("outputText");
-    outputElem.select();
-    document.execCommand("copy");
-    alert("Copied to clipboard (fallback).");
-  }
+function copyToClipboard() {
+  const output = document.getElementById("outputText");
+  output.select();
+  output.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied to clipboard.");
 }
 
-const loveQuotes = [
-  "I like watching you. — Tiana",
-  "I like watching you, playing pool, I mean. — Tiana",
-  "Absolute Vodka !",
-  "Bc Kush !",
-  "You had me at the pool table. — Jay"
-];
-
-function showRandomQuote() {
-  const quoteBox = document.getElementById("quoteBox");
-  const randomIndex = Math.floor(Math.random() * loveQuotes.length);
-  quoteBox.textContent = loveQuotes[randomIndex];
+function pasteFromClipboard() {
+  navigator.clipboard.readText().then((text) => {
+    document.getElementById("inputText").value = text;
+  }).catch(() => {
+    alert("Failed to read clipboard.");
+  });
 }
-
-function unlock() {
-  const key = document.getElementById("passKey").value.toLowerCase();
-  const appContent = document.getElementById("appContent");
-  const unlockSection = document.getElementById("unlockSection");
-  const quoteBox = document.getElementById("quoteBox");
-
-  if (key === "tiana" || key === "jay") {
-    // fade out unlock section & quote
-    unlockSection.style.opacity = '0';
-    quoteBox.style.opacity = '0';
-
-    setTimeout(() => {
-      unlockSection.classList.add("hidden");
-      quoteBox.classList.add("hidden");
-
-      // Show app content with fade-in
-      appContent.classList.remove("hidden");
-      setTimeout(() => {
-        appContent.classList.add("visible");
-        document.getElementById("inputText").focus();
-      }, 50);
-    }, 400);
-
-    document.getElementById("passKey").value = "";
-  } else {
-    alert("Incorrect passkey, Seriously?");
-  }
-}
-
-window.onload = () => {
-  showRandomQuote();
-  setInterval(showRandomQuote, 60000);
-};
 
 function clearInput() {
   document.getElementById("inputText").value = "";
@@ -96,11 +53,42 @@ function clearOutput() {
   document.getElementById("outputText").value = "";
 }
 
-async function pasteFromClipboard() {
-  try {
-    const text = await navigator.clipboard.readText();
-    document.getElementById("inputText").value += text;
-  } catch {
-    alert("Unable to access clipboard.");
+const loveQuotes = [
+  "I like watching you. — Tiana",
+  "I like watching you, playing pool, I mean. — Tiana",
+  "Absolute Vodka!",
+  "BC Kush!",
+  "You had me at the pool table. — Jay"
+];
+
+function showRandomQuote() {
+  const quoteBox = document.getElementById("quoteBox");
+  const quote = loveQuotes[Math.floor(Math.random() * loveQuotes.length)];
+  quoteBox.textContent = quote;
+}
+
+function unlock() {
+  const key = document.getElementById("passKey").value.toLowerCase();
+  const content = document.getElementById("appContent");
+  const quoteBox = document.getElementById("quoteBox");
+  if (key === "tiana" || key === "jay") {
+    content.classList.remove("hidden");
+    document.getElementById("unlockSection").classList.add("hidden");
+    quoteBox.classList.remove("hidden");
+    showRandomQuote();
+    setInterval(showRandomQuote, 60000);
+  } else {
+    alert("Incorrect passkey, Seriously?");
   }
 }
+
+// Floating Hearts
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+  document.querySelector('.heart-container').appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+setInterval(createHeart, 500);
