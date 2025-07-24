@@ -1,37 +1,35 @@
-// Case-sensitive character mapping - Complete Enhanced Security Version
+// 1:1 Character mapping using Greek letters and basic symbols (device compatible)
 const keyMap = {
-  // Lowercase letters - Complex Greek mathematical sequences
-  'a': 'Φ7x9ε2', 'b': 'Ω3δ8μ1', 'c': 'Ψ5λ6π4', 'd': 'Ξ9σ3τ7', 'e': 'Θ2ρ1φ8',
-  'f': 'Λ6ω4ν9', 'g': 'Π8χ2ψ5', 'h': 'Σ1ξ7θ3', 'i': 'Υ4β9ζ6', 'j': 'Φ7η2κ1',
-  'k': 'Ω9γ5α8', 'l': 'Ψ3ι6ε4', 'm': 'Ξ8μ1ο7', 'n': 'Θ5π9υ2', 'o': 'Λ2ρ4σ6',
-  'p': 'Π7τ8φ3', 'q': 'Σ1χ5ψ9', 'r': 'Υ6ω2ξ4', 's': 'Φ9α7β1', 't': 'Ω4γ3δ8',
-  'u': 'Ψ8ε5ζ2', 'v': 'Ξ3η6θ7', 'w': 'Θ1ι4κ9', 'x': 'Λ7λ2μ5', 'y': 'Π6ν8ο3',
-  'z': 'Σ2π1ρ4',
+  // Lowercase letters - Greek letters
+  'a': 'α', 'b': 'β', 'c': 'γ', 'd': 'δ', 'e': 'ε',
+  'f': 'ζ', 'g': 'η', 'h': 'θ', 'i': 'ι', 'j': 'κ',
+  'k': 'λ', 'l': 'μ', 'm': 'ν', 'n': 'ξ', 'o': 'ο',
+  'p': 'π', 'q': 'ρ', 'r': 'σ', 's': 'τ', 't': 'υ',
+  'u': 'φ', 'v': 'χ', 'w': 'ψ', 'x': 'ω', 'y': 'ϊ', 'z': 'ϋ',
   
-  // Uppercase letters - Double-encoded with Greek prefixes/suffixes
-  'A': 'ΦΩ7x9ε2Ψ', 'B': 'ΞΘ3δ8μ1Λ', 'C': 'ΠΣ5λ6π4Υ', 'D': 'ΦΩ9σ3τ7Ψ', 'E': 'ΞΘ2ρ1φ8Λ',
-  'F': 'ΠΣ6ω4ν9Υ', 'G': 'ΦΩ8χ2ψ5Ψ', 'H': 'ΞΘ1ξ7θ3Λ', 'I': 'ΠΣ4β9ζ6Υ', 'J': 'ΦΩ7η2κ1Ψ',
-  'K': 'ΞΘ9γ5α8Λ', 'L': 'ΠΣ3ι6ε4Υ', 'M': 'ΦΩ8μ1ο7Ψ', 'N': 'ΞΘ5π9υ2Λ', 'O': 'ΠΣ2ρ4σ6Υ',
-  'P': 'ΦΩ7τ8φ3Ψ', 'Q': 'ΞΘ1χ5ψ9Λ', 'R': 'ΠΣ6ω2ξ4Υ', 'S': 'ΦΩ9α7β1Ψ', 'T': 'ΞΘ4γ3δ8Λ',
-  'U': 'ΠΣ8ε5ζ2Υ', 'V': 'ΦΩ3η6θ7Ψ', 'W': 'ΞΘ1ι4κ9Λ', 'X': 'ΠΣ7λ2μ5Υ', 'Y': 'ΦΩ6ν8ο3Ψ',
-  'Z': 'ΞΘ2π1ρ4Λ',
+  // Uppercase letters - Greek uppercase
+  'A': 'Α', 'B': 'Β', 'C': 'Γ', 'D': 'Δ', 'E': 'Ε',
+  'F': 'Ζ', 'G': 'Η', 'H': 'Θ', 'I': 'Ι', 'J': 'Κ',
+  'K': 'Λ', 'L': 'Μ', 'M': 'Ν', 'N': 'Ξ', 'O': 'Ο',
+  'P': 'Π', 'Q': 'Ρ', 'R': 'Σ', 'S': 'Τ', 'T': 'Υ',
+  'U': 'Φ', 'V': 'Χ', 'W': 'Ψ', 'X': 'Ω', 'Y': 'Ϊ', 'Z': 'Ϋ',
   
-  // Numbers - Ancient mathematical symbol combinations
-  '0': '∅∞0∇∆', '1': '∫∮1∂∆', '2': '∑∏2∇∅', '3': '∀∃3∂∫', '4': '∈∉4∮∑',
-  '5': '∪∩5∏∀', '6': '⊂⊃6∃∈', '7': '⊆⊇7∉∪', '8': '⊊⊋8∩⊂', '9': '⊓⊔9⊃⊆',
+  // Numbers - Basic math symbols (backward compatible)
+  '0': '⊕', '1': '⊖', '2': '⊗', '3': '⊘', '4': '⊙',
+  '5': '⊚', '6': '⊛', '7': '⊜', '8': '⊝', '9': '⊞',
   
-  // Special characters - Complex Unicode sequences  
-  ' ': '◊◈◇◆◊', '.': '●○◐◑◒', ',': '▲△▼▽▲', '!': '★☆⭐✦★', '?': '♦♢♧♡♦',
-  "'": '◄►▲▼◄', '"': '♠♣♥♦♠', ':': '※‡‰‱※', ';': '⚡⚠⚡⚠⚡', 
-  '(': '〚〛〈〉〚', ')': '【】〖〗【', '[': '⟨⟩⟪⟫⟨', ']': '⦃⦄⦅⦆⦃', 
-  '{': '⟦⟧⟨⟩⟦', '}': '⦗⦘⦙⦚⦗', '-': '═══╤═══', '_': '▁▂▃▄▁',
-  '+': '⊕⊖⊗⊘⊕', '=': '≡≢≣≤≡', '\\': '⟍⟍⟍⟍⟍', '/': '⧸⧹⟋⟍⧸',
-  '|': '║│┃┆║', '&': '⊼⊽⊾⊿⊼', '*': '⋆✱✲✳⋆', '^': '↑↗→↘↑',
-  '%': '‰‱℅％‰', '$': '¤$€£¤', '#': '♯♮♭♯♮', '@': '⊙⊚⊛⊜⊙',
-  '~': '∼∽∾≁∼', '`': '‛‚„‟‛', 
+  // Special characters - Basic symbols (compatible)
+  ' ': '◊', '.': '●', ',': '▲', '!': '★', '?': '♦',
+  "'": '◄', '"': '♠', ':': '※', ';': '⚡', 
+  '(': '〚', ')': '【', '[': '⟨', ']': '⦃', 
+  '{': '⟦', '}': '⦗', '-': '═', '_': '▁',
+  '+': '⊕', '=': '≡', '\\': '⟍', '/': '⧸',
+  '|': '║', '&': '⊼', '*': '⋆', '^': '↑',
+  '%': '‰', '$': '¤', '#': '♯', '@': '⊙',
+  '~': '∼', '`': '‛', 
   
   // Whitespace and control characters
-  '\n': '⏎⏎⏎⏎⏎', '\t': '⇥⇥⇥⇥⇥', '\r': '⏎⤶⏎⤶⏎'
+  '\n': '⏎', '\t': '⇥', '\r': '⤶'
 };
 
 // Reverse the keyMap for decoding
@@ -261,31 +259,61 @@ function unlock() {
   }
 }
 
-// Enhanced heart system with variety
+// Enhanced romantic heart system with slower, more vibrant floating
 function createHeart() {
-  const hearts = ['❤️', '💕', '💖', '💗', '💘', '💙', '💚', '💛', '💜', '🧡'];
+  const romanticHearts = [
+    '❤️', '💕', '💖', '💗', '💘', '💙', '💚', '💛', '💜', '🧡',
+    '💝', '💟', '💌', '🌹', '🌺', '🌸', '🌷', '💐', '✨', '💫',
+    '⭐', '🌟', '💎', '🦋', '🎀', '💍', '👑', '🔮'
+  ];
+  
   const heart = document.createElement('div');
-  heart.className = 'heart';
-  heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+  heart.className = 'romantic-heart';
+  heart.textContent = romanticHearts[Math.floor(Math.random() * romanticHearts.length)];
+  
+  // Random starting position
   heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.top = '100vh';
-  heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-  heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+  heart.style.top = '110vh';
+  
+  // Varied sizes for depth (20-40px)
+  const size = Math.random() * 20 + 20;
+  heart.style.fontSize = size + 'px';
+  
+  // Much slower, more romantic floating (10-18 seconds)
+  const duration = Math.random() * 8 + 10;
+  heart.style.animationDuration = duration + 's';
+  
+  // Random horizontal drift for natural movement
+  const drift = (Math.random() - 0.5) * 150;
+  
+  // Enhanced styling for romance and compatibility
   heart.style.position = 'fixed';
   heart.style.pointerEvents = 'none';
   heart.style.zIndex = '1000';
-  heart.style.animation = `floatUp ${heart.style.animationDuration} linear forwards`;
+  heart.style.opacity = '0.9';
+  heart.style.textShadow = '0 0 8px rgba(255, 182, 193, 0.7)';
+  
+  // Custom keyframe animation for romantic floating
+  heart.style.animation = `romanticFloat ${duration}s ease-out forwards`;
+  heart.style.setProperty('--drift', drift + 'px');
   
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 5000);
+  
+  // Remove after animation completes
+  setTimeout(() => {
+    if (heart.parentNode) {
+      heart.remove();
+    }
+  }, duration * 1000 + 1000);
 }
 
 function startHearts() {
-  setInterval(createHeart, 800);
+  // Create hearts every 1.2-2 seconds for romantic elegance
+  setInterval(createHeart, 1200 + Math.random() * 800);
 }
 
-// Add CSS animations dynamically
-function addAnimations() {
+// Add enhanced CSS animations for romantic hearts
+function addRomanticAnimations() {
   const style = document.createElement('style');
   style.textContent = `
     @keyframes slideIn {
@@ -299,9 +327,39 @@ function addAnimations() {
       75% { transform: translateX(5px); }
     }
     
-    @keyframes floatUp {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    @keyframes romanticFloat {
+      0% { 
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.7); 
+        opacity: 0.8; 
+      }
+      5% {
+        opacity: 1;
+        transform: translateY(-5vh) translateX(calc(var(--drift) * 0.05)) rotate(10deg) scale(1);
+      }
+      25% {
+        transform: translateY(-25vh) translateX(calc(var(--drift) * 0.25)) rotate(90deg) scale(1.1);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-50vh) translateX(calc(var(--drift) * 0.5)) rotate(180deg) scale(1.2);
+        opacity: 1;
+      }
+      75% {
+        transform: translateY(-75vh) translateX(calc(var(--drift) * 0.75)) rotate(270deg) scale(1.1);
+        opacity: 0.9;
+      }
+      95% {
+        transform: translateY(-95vh) translateX(calc(var(--drift) * 0.95)) rotate(350deg) scale(0.8);
+        opacity: 0.5;
+      }
+      100% { 
+        transform: translateY(-110vh) translateX(var(--drift)) rotate(360deg) scale(0.5); 
+        opacity: 0; 
+      }
+    }
+    
+    .romantic-heart {
+      will-change: transform, opacity;
     }
     
     .toast {
@@ -326,7 +384,7 @@ function addAnimations() {
 // Enhanced initialization
 window.onload = () => {
   document.getElementById("quoteBox").classList.add("hidden");
-  addAnimations();
+  addRomanticAnimations();
   
   // Add keyboard shortcuts
   document.addEventListener('keydown', (e) => {
